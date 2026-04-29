@@ -1,5 +1,7 @@
 # 节点订阅池 —— 多源代理节点聚合与订阅分发服务
 
+[![GitHub](https://img.shields.io/badge/GitHub-fmc999/Node__js---181717?logo=github)](https://github.com/fmc999/Node_js-)
+
 一个基于 Node.js 的轻量级代理节点订阅聚合服务器。支持从多个外部订阅源拉取节点、自动去重合并、定时更新，并通过 Base64 编码以标准订阅格式对外分发。内置现代化管理后台、伪装首页与博客系统，兼具安全性、隐蔽性与易用性。
 
 ---
@@ -341,11 +343,9 @@ https://你的域名/sub.uuidban
 
 **方式 A：Git 克隆（推荐，后续更新方便）**
 
-将项目上传到 GitHub/Gitee 私有仓库后：
-
 ```bash
-git clone https://github.com/你的用户名/仓库名.git ~/blog
-cd ~/blog
+git clone https://github.com/fmc999/Node_js-.git ~/节点订阅池
+cd ~/节点订阅池/blog
 ```
 
 **方式 B：SCP 上传**
