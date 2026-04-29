@@ -34,6 +34,7 @@
 - [API / 路由说明](#api--路由说明)
 - [数据文件说明](#数据文件说明)
 - [注意事项](#注意事项)
+- [参考来源](#参考来源)
 - [许可证](#许可证)
 
 ---
@@ -173,7 +174,7 @@
 
 ### 环境要求
 
-- **一台服务器**：Linux（Ubuntu/Debian/CentOS 均可），至少 512MB 内存
+- **一台服务器**：Linux（Ubuntu/Debian/CentOS 均可），至少 256MB 内存
 - **一个域名**（可选但推荐）：用于配置 HTTPS，没有的话直接用 IP 也行
 - **你的电脑**：Windows/Mac 均可，需要能 SSH 连到服务器
 
@@ -319,7 +320,7 @@ http://你的服务器IP/fmc
 http://你的服务器IP/sub.uuidban
 ```
 
-把这个链接填入 Clash / V2RayN / Sing-box 等代理客户端即可。
+把这个链接填入 V2RayN / Sing-box 等代理客户端即可。
 
 如果是域名 + HTTPS 部署的：
 
@@ -658,6 +659,12 @@ pm2 logs node-pool
 6. **伪装页建议**：将 `index.html` 自定义为与代理无关的正常网站外观，以提高隐蔽性。默认伪装页为爱心弹窗动画页面。
 
 7. **路由 Bug 修复备忘**：旧版路由白名单中包含 `!pathname.includes('/')` 条件，导致所有 `.uuidban` 路径（如 `/sub.uuidban`）被误判为非法路由返回 404。当前版本已移除该错误条件，路径穿越防护由独立的 `isPathSafe()` 函数负责。
+
+---
+
+## 参考来源
+
+本项目灵感来源于 [CF-Workers-SUB](https://github.com/cmliu/CF-Workers-SUB) —— 一个基于 Cloudflare Workers 的节点订阅聚合工具。与其 Worker 方案不同，本项目基于 Node.js 自建服务器，适合自有 VPS 用户部署，无需依赖 Cloudflare 平台。
 
 ---
 
